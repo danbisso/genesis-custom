@@ -13,6 +13,14 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: acf-field-groups/example.php:12
+msgid "Example Fields"
+msgstr ""
+
+#: acf-field-groups/example.php:21
+msgid "Example Text"
+msgstr ""
+
 #: functions.php:155
 msgid "Main Menu"
 msgstr ""

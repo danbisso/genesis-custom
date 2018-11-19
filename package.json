@@ -20,6 +20,7 @@
     "watch:styles": "npm-watch styles",
     "watch:l10n": "npm-watch l10n",
     "watch:i18n": "npm-watch i18n",
+    "watch:iconfont": "npm-watch iconfont",
     "styles": "node-sass sass/style.scss style.css --source-map true && postcss style.css -r --config config/postcss.config.js",
     "i18n": "node config/wp-pot.config.js",
     "l10n": "for file in `find ./languages -name \"*.po\"` ; do msgfmt -o ${file/.po/.mo} $file ; done",
@@ -29,6 +30,10 @@
     "styles": {
       "patterns": "sass",
       "extensions": "scss"
+    },
+    "iconfont": {
+      "patterns": "assets/svg",
+      "extensions": "svg"
     },
     "l10n": {
       "patterns": "",
