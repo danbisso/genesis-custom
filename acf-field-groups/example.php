@@ -28,7 +28,7 @@ Example text
 			array (
 				'param' => 'page_template',
 				'operator' => '==',
-				'value' => 'example.php',
+				'value' => 'templates/example.php',
 			),
 		),
 	),
