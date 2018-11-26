@@ -24,3 +24,7 @@ msgstr ""
 #: functions.php:155
 msgid "Main Menu"
 msgstr ""
+
+#: templates/example.php:4
+msgid "Example Template"
+msgstr ""
