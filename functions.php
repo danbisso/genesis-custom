@@ -62,6 +62,9 @@ add_theme_support(
 	)
 );
 
+//* Add WP 5.0 alignwide and alignfull support
+add_theme_support( 'align-wide' );
+
 
 
 add_filter( 'upload_mimes', 'genesis_custom_svg_support' );

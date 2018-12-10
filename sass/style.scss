@@ -707,6 +707,22 @@ img.alignright,
 }
 
 
+.entry-content .alignwide {
+    margin-left: -100px;
+    margin-right: -100px;
+    max-width: $content-width + 200px;
+}
+
+.entry-content .alignfull {
+	margin-left: calc( -100vw / 2 + 100% / 2 );
+    margin-right: calc( -100vw / 2 + 100% / 2 );
+    width: 100vw;
+}
+
+.entry-content ul.wp-block-gallery {
+	margin-left: 0;
+}
+
 /* Widgets
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1137,7 +1153,7 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.site-inner {
-		max-width: 1140px;
+		max-width: $content-width;
 	}
 
 
