@@ -15,29 +15,9 @@
 */
 
 
+
+@import 'variables';
 @import 'menu-toggle';
-
-
-$color-highlight: green;
-$color-text-body: #333;
-
-$font-family-body: 'Fira Sans', sans-serif;
-$font-family-headings: $font-family-body;
-
-$font-size-body: 18px;
-$font-weight-body: 400;
-$font-weight-bold: 600;
-$font-size-heading1: $font-size-body * 1.7;
-$font-size-heading2: $font-size-body * 1.5;
-$font-size-heading3: $font-size-body * 1.3;
-$font-size-heading4: $font-size-body * 1.1;
-$font-size-heading5: $font-size-body;
-$font-size-heading6: $font-size-body * 0.9;
-
-$logo-width: 100px;
-$logo-height: 200px;
-
-$menu-width: 250px;
 
 
 /* HTML5 Reset
@@ -120,12 +100,12 @@ body > div {
 }
 
 body {
-	background-color: #fff;
+	background-color: $color-background-body;
 	color: $color-text-body;
 	font-family: $font-family-body;
 	font-size: $font-size-body;
 	font-weight: $font-weight-body;
-	line-height: 1.625;
+	line-height: $font-line-height-body;
 	margin: 0;
 }
 
@@ -137,13 +117,13 @@ input[type="submit"],
 textarea:focus,
 .button,
 .gallery img {
-	transition: all 0.2s ease-in-out;
+	transition: all $transition-time $transition-easing;
 }
 
 a {
 	color: $color-highlight;
 	text-decoration: underline;
-	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	transition: color $transition-time $transition-easing, background-color $transition-time $transition-easing;
 }
 
 a:focus,
@@ -153,7 +133,7 @@ a:hover {
 }
 
 p {
-	margin: 0 0 30px;
+	margin: 0 0 $spacing-content-element;
 	padding: 0;
 }
 
@@ -172,12 +152,12 @@ hr {
 	border-collapse: collapse;
 	border-top: 1px solid #eee;
 	clear: both;
-	margin: 30px 0;
+	margin: $spacing-content-element 0;
 }
 
 b,
 strong {
-	font-weight: 700;
+	font-weight: $font-weight-bold;
 }
 
 blockquote,
@@ -193,7 +173,7 @@ mark {
 }
 
 blockquote {
-	margin: 30px;
+	margin: $spacing-content-element;
 }
 
 blockquote::before {
@@ -217,8 +197,8 @@ h5,
 h6 {
 	font-family: $font-family-headings;
 	font-weight: $font-weight-body;
-	line-height: 1.2;
-	margin: 0 0 20px;
+	line-height: $font-line-height-headings;
+	margin: 0 0 $spacing-content-element - 10px;
 }
 
 h1 {
@@ -334,7 +314,7 @@ figure {
 
 .gallery-item {
 	float: left;
-	margin: 0 0 30px;
+	margin: 0 0 $spacing-content-element;
 	text-align: center;
 }
 
@@ -389,20 +369,12 @@ input[type="submit"],
 	text-decoration: none;
 	white-space: normal;
 	width: auto;
-}
 
-button:focus,
-button:hover,
-input[type="button"]:focus,
-input[type="button"]:hover,
-input[type="reset"]:focus,
-input[type="reset"]:hover,
-input[type="submit"]:focus,
-input[type="submit"]:hover,
-.button:focus,
-.button:hover {
-	background-color: $color-highlight;
-	color: #fff;
+	&:focus,
+	&:hover {
+		background-color: $color-highlight;
+		color: #fff;
+	}
 }
 
 .entry-content .button:focus,
@@ -503,7 +475,7 @@ th:first-child {
 	color: $color-text-body;
 	display: block;
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: $font-weight-bold;
 	height: auto;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -583,7 +555,7 @@ th:first-child {
 
 .after-entry {
 	box-shadow: 0 0 20px rgba(0,0,0,0.05);
-	padding: 20px 30px;
+	padding: 20px $spacing-content-element;
 }
 
 .after-entry .widget:last-of-type {
@@ -696,7 +668,7 @@ a.alignright {
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto 30px;
+	margin: 0 auto $spacing-content-element;
 }
 
 img.alignnone,
@@ -731,7 +703,7 @@ img.alignright,
 .entry-content .wp-audio-shortcode,
 .entry-content .wp-playlist,
 .entry-content .wp-video {
-	margin: 0 0 30px;
+	margin: 0 0 $spacing-content-element;
 }
 
 
@@ -764,7 +736,7 @@ img.alignright,
 
 .widget li li {
 	border: 0;
-	margin: 0 0 0 30px;
+	margin: 0 0 0 $spacing-content-element;
 	padding: 0;
 }
 
@@ -833,7 +805,6 @@ img.alignright,
 }
 
 .wp-custom-logo .title-area {
-	max-width: 350px;
 	padding-bottom: 5px;
 	padding-top: 5px;
 }
@@ -868,7 +839,7 @@ img.alignright,
 
 .custom-logo {
 	width: $logo-width;
-	height: $logo-height;
+	height: auto;
 }
 
 
@@ -893,10 +864,10 @@ img.alignright,
 	
 	position: absolute;
 	background-color: white;
-	width: $menu-width;
+	width: $touch-menu-width;
 	max-width: 100%;
-	transform: translate3d($menu-width, 0, 0);
-	transition: transform .5s;
+	transform: translate3d($touch-menu-width, 0, 0);
+	transition: transform $transition-time-menu $transition-easing-menu;
 	height: 100vh;
 	right: 0;
 	top: 0;
@@ -934,7 +905,7 @@ img.alignright,
     background-color: black;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity $transition-time-menu $transition-easing-menu;
 }
 .menu-open {
 
@@ -991,7 +962,7 @@ img.alignright,
 
 .entry-content ol,
 .entry-content ul {
-	margin-bottom: 30px;
+	margin-bottom: $spacing-content-element;
 	margin-left: 40px;
 }
 
@@ -1097,7 +1068,7 @@ p.entry-meta {
 }
 
 .comment-list li {
-	padding: 40px 0 0 30px;
+	padding: 40px 0 0 $spacing-content-element;
 }
 
 .comment-list .depth-1 {
@@ -1108,7 +1079,7 @@ p.entry-meta {
 }
 
 .comment-header {
-	margin-bottom: 30px;
+	margin-bottom: $spacing-content-element;
 }
 
 .comment-content {
@@ -1157,15 +1128,10 @@ p.entry-meta {
 }
 
 
-/* Plugins
----------------------------------------------------------------------------------------------------- */
-
-
-
 /* Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $breakpoint-touch-menu) {
 
 	/* Site-Inner
 	--------------------------------------------- */
