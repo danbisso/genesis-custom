@@ -133,7 +133,7 @@ a:hover {
 }
 
 p {
-	margin: 0 0 $spacing-content-element;
+	margin: 0 0 $spacing-content-vertical;
 	padding: 0;
 }
 
@@ -152,7 +152,7 @@ hr {
 	border-collapse: collapse;
 	border-top: 1px solid #eee;
 	clear: both;
-	margin: $spacing-content-element 0;
+	margin: $spacing-content-vertical 0;
 }
 
 b,
@@ -173,7 +173,7 @@ mark {
 }
 
 blockquote {
-	margin: $spacing-content-element;
+	margin: $spacing-content-vertical;
 }
 
 blockquote::before {
@@ -198,7 +198,7 @@ h6 {
 	font-family: $font-family-headings;
 	font-weight: $font-weight-body;
 	line-height: $font-line-height-headings;
-	margin: 0 0 $spacing-content-element - 10px;
+	margin: 0 0 $spacing-content-vertical - 10px;
 }
 
 h1 {
@@ -314,7 +314,7 @@ figure {
 
 .gallery-item {
 	float: left;
-	margin: 0 0 $spacing-content-element;
+	margin: 0 0 $spacing-content-vertical;
 	text-align: center;
 }
 
@@ -516,7 +516,7 @@ th:first-child {
 .site-inner {
 	clear: both;
 	margin: 70px auto 0;
-	padding: 60px 30px 0;
+	padding: $spacing-content-vertical $spacing-content-horizontal 0;
 }
 
 
@@ -555,7 +555,7 @@ th:first-child {
 
 .after-entry {
 	box-shadow: 0 0 20px rgba(0,0,0,0.05);
-	padding: 20px $spacing-content-element;
+	padding: 20px $spacing-content-vertical;
 }
 
 .after-entry .widget:last-of-type {
@@ -668,7 +668,7 @@ a.alignright {
 img.centered,
 .aligncenter {
 	display: block;
-	margin: 0 auto $spacing-content-element;
+	margin: 0 auto $spacing-content-vertical;
 }
 
 img.alignnone,
@@ -703,20 +703,25 @@ img.alignright,
 .entry-content .wp-audio-shortcode,
 .entry-content .wp-playlist,
 .entry-content .wp-video {
-	margin: 0 0 $spacing-content-element;
+	margin: 0 0 $spacing-content-vertical;
 }
 
 
+.entry-content .alignfull,
 .entry-content .alignwide {
-    margin-left: -100px;
-    margin-right: -100px;
-    max-width: $content-width + 200px;
-}
-
-.entry-content .alignfull {
 	margin-left: calc( -100vw / 2 + 100% / 2 );
     margin-right: calc( -100vw / 2 + 100% / 2 );
+    margin-bottom: $spacing-content-vertical;
     width: 100vw;
+    max-width: 100vw;
+}
+@media screen and (min-width: $max-content-width + $spacing-content-horizontal * 4 ) {
+	.entry-content .alignwide {
+		position: relative;
+		margin-left: 0;
+		margin-right: 0;
+		max-width: $max-content-width + $spacing-content-horizontal * 4;
+	}
 }
 
 .entry-content ul.wp-block-gallery {
@@ -752,7 +757,7 @@ img.alignright,
 
 .widget li li {
 	border: 0;
-	margin: 0 0 0 $spacing-content-element;
+	margin: 0 0 0 $spacing-content-vertical;
 	padding: 0;
 }
 
@@ -978,7 +983,7 @@ img.alignright,
 
 .entry-content ol,
 .entry-content ul {
-	margin-bottom: $spacing-content-element;
+	margin-bottom: $spacing-content-vertical;
 	margin-left: 40px;
 }
 
@@ -1084,7 +1089,7 @@ p.entry-meta {
 }
 
 .comment-list li {
-	padding: 40px 0 0 $spacing-content-element;
+	padding: 40px 0 0 $spacing-content-vertical;
 }
 
 .comment-list .depth-1 {
@@ -1095,7 +1100,7 @@ p.entry-meta {
 }
 
 .comment-header {
-	margin-bottom: $spacing-content-element;
+	margin-bottom: $spacing-content-vertical;
 }
 
 .comment-content {
@@ -1153,7 +1158,7 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.site-inner {
-		max-width: $content-width;
+		max-width: $max-content-width;
 	}
 
 
