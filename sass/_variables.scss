@@ -5,21 +5,22 @@
 $color-highlight: green;
 $color-text-body: #333;
 $color-background-body: transparent;
+$color-background-header: white;
 
 $font-family-body: 'Fira Sans', sans-serif;
 $font-family-headings: $font-family-body;
 
 $font-size-body: 18px;
-$font-weight-body: 400;
-$font-weight-bold: 600;
-$font-line-height-body: 1.625;
-$font-line-height-headings: 1.2;
 $font-size-heading1: $font-size-body * 1.7;
 $font-size-heading2: $font-size-body * 1.5;
 $font-size-heading3: $font-size-body * 1.3;
 $font-size-heading4: $font-size-body * 1.1;
 $font-size-heading5: $font-size-body;
 $font-size-heading6: $font-size-body * 0.9;
+$font-weight-body: 400;
+$font-weight-bold: 600;
+$font-line-height-body: 1.625;
+$font-line-height-headings: 1.2;
 
 $transition-time: 0.2s;
 $transition-time-menu: 0.5s;

@@ -25,5 +25,18 @@ window.addEventListener( 'resize', function() {
 });
 
 
+// Handle dropdown links
+var dropdown_links = document.querySelectorAll( '.nav-primary .menu-item-has-children > a' );
+
+dropdown_links.forEach(function(dropdown_link) {
+    dropdown_link.addEventListener( 'click', function(event){
+
+    	event.preventDefault();
+
+    	dropdown_link.parentElement.classList.toggle( 'open' );
+    });
+});
+
+
 
 

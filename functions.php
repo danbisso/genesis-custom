@@ -161,7 +161,7 @@ function genesis_custom_menus() {
 }
 
 //* Force primary navigation to one level depth.
-add_filter( 'wp_nav_menu_args', 'genesis_custom_primary_menu_depth' );
+// add_filter( 'wp_nav_menu_args', 'genesis_custom_primary_menu_depth' );
 function genesis_custom_primary_menu_depth( $args ) {
 
 	if ( 'primary' !== $args['theme_location'] ) {
@@ -202,9 +202,8 @@ function genesis_custom_menu_add_toggle( $open, $args ) {
 }
 
 //* Force 'primary-menu' element id.
-add_filter( 'wp_nav_menu_args', 'fun' );
-function fun( $args ) {
-	
+// add_filter( 'wp_nav_menu_args', 'genesis_custom_force_primary_menu_id' );
+function genesis_custom_force_primary_menu_id( $args ) {
 
 	if( $args[ 'theme_location' ] == 'primary' ) {
 
@@ -213,13 +212,6 @@ function fun( $args ) {
 
 	return $args;
 }
-
-// add_filter( 'wp_nav_menu_args', 'genesis_custom_primary_menu_add_toggle' );
-// function genesis_custom_primary_menu_add_toggle( $args ) {
-
-// 	var_dump($args);
-// 	return $args;
-// }
 
 /**********************
 

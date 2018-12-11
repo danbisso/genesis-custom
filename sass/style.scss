@@ -18,6 +18,7 @@
 
 @import 'variables';
 @import 'menu-toggle';
+@import 'iconfont';
 
 
 /* HTML5 Reset
@@ -516,7 +517,7 @@ th:first-child {
 .site-inner {
 	clear: both;
 	margin: 70px auto 0;
-	padding: $spacing-content-vertical $spacing-content-horizontal 0;
+	padding: $spacing-content-vertical * 2 $spacing-content-horizontal 0;
 }
 
 
@@ -718,6 +719,7 @@ img.alignright,
 @media screen and (min-width: $max-content-width + $spacing-content-horizontal * 4 ) {
 	.entry-content .alignwide {
 		position: relative;
+		left: -$spacing-content-horizontal * 3;
 		margin-left: 0;
 		margin-right: 0;
 		max-width: $max-content-width + $spacing-content-horizontal * 4;
@@ -810,7 +812,7 @@ img.alignright,
 .site-header {
 	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0,0,0,0.05);
-	padding: 0 30px;
+	padding: 0 $spacing-content-horizontal;
 	position: fixed;
 	width: 100%;
 	z-index: 9999;
@@ -881,10 +883,10 @@ img.alignright,
 	}
 }
 
-.menu {
+.nav-primary .menu {
 	
 	position: absolute;
-	background-color: white;
+	background-color: $color-background-header;
 	width: $touch-menu-width;
 	max-width: 100%;
 	transform: translate3d($touch-menu-width, 0, 0);
@@ -908,9 +910,50 @@ img.alignright,
 
 	a:focus,
 	a:hover,
-	.current-menu-item a {
+	.current-menu-item > a {
 		color: $color-highlight;
 		text-decoration: none;
+	}
+
+	.menu-item-has-children {
+		
+		& > a:after{
+			@include icon();
+			display: inline-block;
+			content: '\e800';
+			margin-left: 0.2em;
+		}
+
+		.sub-menu a {
+			color: #666;
+			font-size: 0.8em;
+			transition: padding $transition-time-menu ease-out;
+		}
+		.sub-menu {
+			transition: opacity $transition-time-menu $transition-easing-menu;
+		}
+		&:not(.open) .sub-menu {
+			height: 0;
+			overflow: hidden;
+			opacity: 0;
+			a {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+		&.open {
+			.sub-menu {
+				opacity: 1;
+				
+				a {
+					padding-top: 15px;
+					padding-bottom: 15px;
+				}
+			}
+			& > a:after{
+				transform: rotate(180deg);
+			}
+		}
 	}
 }
 
@@ -934,20 +977,20 @@ img.alignright,
 	    opacity: 0.5;
 	}
 	
-	.menu {
+	.nav-primary .menu {
 
 		transform: translate3d(0, 0, 0);	
 	}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: $breakpoint-touch-menu) {
 
 	.menu-toggle {
 		display: none;
 		visibility: hidden;
 	}
 
-	.menu {
+	.nav-primary .menu {
 		position: static;
 	    width: initial;
 	    height: initial;
@@ -959,13 +1002,41 @@ img.alignright,
 	    background-color: transparent;
 	    display: flex;
 
-	    a {
-    		font-size: 15px;
-	    	padding: 27px 20px;
+	    & > li {
+	    	background-color: $color-background-header;
 
-	    }
+		    a {
+				font-size: 15px;
+		    	padding: 27px 20px;
+
+		    }
+		}
 	    li:last-child a {
 	    	margin-right: -20px;
+	    }
+
+	    .menu-item-has-children {
+	    	
+	    	position: relative;
+
+	    	&.open {
+	    		.sub-menu {
+					position: absolute;
+					width: 100%;
+					text-align: left;
+					background-color: $color-background-header;
+
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						z-index: -1;
+						width: 100%;
+						height: 100%;
+					    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+					}
+	    		}
+	    	}
 	    }
 	}
 }

@@ -21,7 +21,7 @@ msgstr ""
 msgid "Example Text"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:158
 msgid "Main Menu"
 msgstr ""
 
