@@ -516,8 +516,8 @@ th:first-child {
 
 .site-inner {
 	clear: both;
-	margin: 70px auto 0;
-	padding: $spacing-content-vertical * 2 $spacing-content-horizontal 0;
+	margin: 0 auto ;
+	padding: $header-height + $spacing-content-vertical * 2 $spacing-content-horizontal 0;
 }
 
 
@@ -814,6 +814,7 @@ img.alignright,
 	box-shadow: 0 0 20px rgba(0,0,0,0.05);
 	padding: 0 $spacing-content-horizontal;
 	position: fixed;
+	// top: 0;
 	width: 100%;
 	z-index: 9999;
 }
@@ -883,7 +884,7 @@ img.alignright,
 	}
 }
 
-.nav-primary .menu {
+.menu-primary {
 	
 	position: absolute;
 	background-color: $color-background-header;
@@ -891,17 +892,17 @@ img.alignright,
 	max-width: 100%;
 	transform: translate3d($touch-menu-width, 0, 0);
 	transition: transform $transition-time-menu $transition-easing-menu;
-	height: 100vh;
+	height: calc(100vh - #{$header-height}); //https://github.com/sass/sass/issues/818
 	right: 0;
-	top: 0;
+	top: $header-height;
 	padding: 30px;
-	padding-top: 70px;
 	line-height: 1;
 	clear: both;
 	text-align: right;
+	overflow-y: auto;
 
 	a {
-		color: $color-text-body;
+		color: $color-text-menu;
 		display: block;
 		font-weight: $font-weight-body;
 		padding: 15px 0;
@@ -925,7 +926,7 @@ img.alignright,
 		}
 
 		.sub-menu a {
-			color: #666;
+			color: $color-text-submenu;
 			font-size: 0.8em;
 			transition: padding $transition-time-menu ease-out;
 		}
@@ -957,7 +958,7 @@ img.alignright,
 	}
 }
 
-.site-header:before {
+.site-container:before {
 
 	content: '';
     display: block;
@@ -973,11 +974,11 @@ img.alignright,
 }
 .menu-open {
 
-	.site-header:before {
+	.site-container:before {
 	    opacity: 0.5;
 	}
 	
-	.nav-primary .menu {
+	.menu-primary {
 
 		transform: translate3d(0, 0, 0);	
 	}
@@ -990,12 +991,13 @@ img.alignright,
 		visibility: hidden;
 	}
 
-	.nav-primary .menu {
+	.menu-primary {
 		position: static;
 	    width: initial;
 	    height: initial;
 	    padding: 0;
 	    max-width: initial;
+	    overflow-y: initial;
 	    float: right;
 	    clear: none;
 	    transform: none;

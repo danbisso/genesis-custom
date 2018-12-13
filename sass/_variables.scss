@@ -2,10 +2,19 @@
 /* SASS Variables
 ---------------------------------------------------------------------------------------------------- */
 
+/* Colors */
+
 $color-highlight: green;
+
 $color-text-body: #333;
+$color-text-menu: $color-text-body;
+$color-text-submenu: #666;
+
 $color-background-body: transparent;
 $color-background-header: white;
+
+
+/* Fonts */
 
 $font-family-body: 'Fira Sans', sans-serif;
 $font-family-headings: $font-family-body;
@@ -22,10 +31,18 @@ $font-weight-bold: 600;
 $font-line-height-body: 1.625;
 $font-line-height-headings: 1.2;
 
+
+/* Transitions */
+
 $transition-time: 0.2s;
 $transition-time-menu: 0.5s;
 $transition-easing: ease-in-out;
 $transition-easing-menu: ease-in-out;
+
+
+/* Layout */
+
+$header-height: 70px;
 
 $logo-width: 155px;/* Css width. Use @2x logo image. */
 
