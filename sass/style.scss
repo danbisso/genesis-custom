@@ -730,6 +730,27 @@ img.alignright,
 	margin-left: 0;
 }
 
+/* Sidebar
+---------------------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: $breakpoint-touch-menu ) {
+	.content-sidebar {
+		
+		.content-sidebar-wrap {
+			display: flex;
+			justify-content: space-between;
+		}
+		.content {
+			width: calc(66.66666% - #{$spacing-content-horizontal / 2});
+		}
+		.sidebar {
+			width: calc(33.33333% - #{$spacing-content-horizontal / 2});
+		}
+	}
+}
+
+
+
 /* Widgets
 ---------------------------------------------------------------------------------------------------- */
 

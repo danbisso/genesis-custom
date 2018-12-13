@@ -95,7 +95,7 @@ function genesis_custom_remove_widget_areas(){
 	unregister_sidebar( 'header-right' );
 
 	// Primary sidebar.
-	unregister_sidebar( 'sidebar' );
+	// unregister_sidebar( 'sidebar' );
 
 	// Secondary sidebar.
 	unregister_sidebar( 'sidebar-alt' );
@@ -108,7 +108,7 @@ add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_c
 add_action( 'after_setup_theme', 'genesis_custom_remove_theme_layouts' );
 function genesis_custom_remove_theme_layouts(){
 
-	genesis_unregister_layout( 'content-sidebar' );
+	// genesis_unregister_layout( 'content-sidebar' );
 	genesis_unregister_layout( 'sidebar-content' );
 	genesis_unregister_layout( 'content-sidebar-sidebar' );
 	genesis_unregister_layout( 'sidebar-content-sidebar' );

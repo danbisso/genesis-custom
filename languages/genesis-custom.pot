@@ -25,6 +25,6 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: templates/example.php:4
-msgid "Example Template"
+#: templates/content-sidebar.php:4
+msgid "Content-Sidebar"
 msgstr ""
