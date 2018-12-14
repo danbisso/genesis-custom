@@ -519,6 +519,10 @@ th:first-child {
 	margin: 0 auto ;
 	padding: $header-height + $spacing-content-vertical * 2 $spacing-content-horizontal 0;
 }
+.page-template-hidden-title .site-inner {
+	
+	padding-top: $header-height;
+}
 
 
 /* Common Classes

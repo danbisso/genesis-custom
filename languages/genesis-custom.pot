@@ -28,3 +28,7 @@ msgstr ""
 #: templates/content-sidebar.php:4
 msgid "Content-Sidebar"
 msgstr ""
+
+#: templates/hidden-title.php:4
+msgid "Hidden Title"
+msgstr ""
