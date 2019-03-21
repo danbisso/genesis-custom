@@ -40,9 +40,6 @@ ACF
 
 **********************/
 
-//* Hide ACF field group menu item.
-add_filter( 'acf/settings/show_admin', '__return_false' );
-
 //* Register ACF field groups.
 add_action( 'acf/init', 'genesis_custom_register_acf_field_groups' );
 function genesis_custom_register_acf_field_groups() {
